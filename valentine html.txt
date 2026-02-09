@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Valentine's Day ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(120deg, #ff758c, #ff7eb3);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+.container {
+    padding: 30px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+h1 { font-size: 2.4em; }
+h2 { font-weight: normal; margin-bottom: 25px; }
+.rose {
+    width: 260px;
+    margin: 25px auto;
+    animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+.message {
+    background: rgba(255,255,255,0.18);
+    padding: 25px;
+    border-radius: 20px;
+    line-height: 1.7;
+    animation: fadeIn 2s ease;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 22px;
+    animation: rise 6s linear infinite;
+}
+@keyframes rise {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-100vh); opacity: 0; }
+}
+button {
+    margin-top: 30px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    background: white;
+    color: #ff4f7b;
+    font-size: 1em;
+    cursor: pointer;
+}
+footer { margin-top: 35px; font-size: 0.85em; opacity: 0.8; }
+</style>
+</head>
+<body>
+
+<audio id="music" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2c6b4c4f1a.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+    <h1>❤️ Happy Valentine's Day ❤️</h1>
+    <h2>From <strong>Shiene</strong> to <strong>Roensfher</strong> 🌹</h2>
+
+    <img class="rose"
+         src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
+         alt="Rose">
+
+    <div class="message">
+        <p><strong>Happy Heart's Day, love!</strong></p>
+        <p>I want to take this opportunity to say thank you and appreciate you for all the love and efforts that you give every single day.</p>
+        <p>Thank you, love, for being there always through ups and downs, thank you for being a supportive, caring, sweet, understanding, and listener partner since day 1.</p>
+        <p>I hope you know how much you mean to me and will always be here for you in every season of your life.</p>
+        <p>Sana lagi mong isipin that you're enough, appreciated, and always loved by me no matter what happens.</p>
+        <p><strong>I love you so much, love! ❤️<br>Happy Valentine's Day 🌹❤️</strong></p>
+    </div>
+
+    <button onclick="surprise()">Tap for a surprise 💖</button>
+
+    <footer>Made with so much love 💕</footer>
+</div>
+
+<script>
+const music = document.getElementById("music");
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 7000);
+}
+setInterval(createHeart, 300);
+
+function surprise() {
+    music.play();
+    alert("❤️ FOREVER & ALWAYS ❤️\nI love you so much!");
+}
+</script>
+</body>
+</html>
